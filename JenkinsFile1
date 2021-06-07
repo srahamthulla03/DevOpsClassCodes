@@ -1,14 +1,14 @@
 pipeline{
     tools{
         jdk 'myjava'
-        maven 'mymaven1'
+        maven 'Mymaven'
     }
     agent none
     stages{
         stage('Checkout'){
             agent any
             steps{
-                git 'https://github.com/devops-trainer/DevOpsClassCodes.git'
+                git 'https://github.com/srahamthulla03/DevOpsClassCodes.git'
             }
         }
         stage('Compile'){
@@ -24,9 +24,9 @@ pipeline{
             }
         }
         stage('UnitTest'){
-            agent {label 'win_slave'}
+            agent {label ' windowsslave'}
             steps{
-                git 'https://github.com/devops-trainer/DevOpsClassCodes.git'
+                git 'https://github.com/srahamthulla03/DevOpsClassCodes.git '
                 bat 'mvn test'
             }
         }
